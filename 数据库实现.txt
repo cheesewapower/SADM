@@ -1,0 +1,16 @@
+1.
+
+SELECT 
+maintenance.设备表.设备Id,maintenance.设备表.设备名称,maintenance.设备类型表.检修周期-datediff(now(),maintenance.设备表.最后保养时间) as
+ 到检天数 FROM maintenance.设备表 LEFT JOIN maintenance.设备类型表 ON 
+ maintenance.设备表.设备类型=maintenance.设备类型表.设备类型 WHERE
+ (maintenance.设备类型表.检修周期-(curdate()-maintenance.设备表.最后保养时间))<3
+
+
+2.
+USE maintenance;
+select 保养表.保养日期 from where 保养记录.保养Id=保养表.保养Id
+
+select 材料名称，材料消耗 from where 保养记录.保养记录Id=保养记录与保养消耗.保养记录Id2 and
+ 保养消耗.保养消耗Id=保养记录与保养消耗.保养消耗Id 
+
